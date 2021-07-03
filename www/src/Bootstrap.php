@@ -28,8 +28,6 @@ final class Bootstrap
     public function __invoke(string $context, array $globals, array $server): int
     {
         $app = Injector::getInstance($context)->getInstance(AppInterface::class);
-
-        var_dump($context);
         assert($app instanceof App);
         if ($app->httpCache->isNotModified($server)) {
             $app->httpCache->transfer();
