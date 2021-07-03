@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    container_name: bear_sunday_app
+    platform: linux/arm64
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./www:/var/www
